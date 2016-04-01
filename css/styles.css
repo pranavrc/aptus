@@ -1,0 +1,90 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+    background-color: hsl(0, 0%, 92%);
+    height: 100%;
+    margin: 0 auto;
+}
+
+#container {
+    left: 5%;
+    right: 5%;
+    top: 5%;
+    bottom 5%;
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    position: absolute;
+    overflow: hidden;
+}
+
+#search {
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    height: 51px;
+    margin-bottom: 25px;
+}
+
+.search-form {
+    width: 100%;
+}
+
+input.search-input {
+    display: none;
+    height: 51px;
+    width: 94%;
+    background-color: white;
+    font-size: 15px;
+    font-family: 'Oswald', sans-serif;
+    border: 1px solid #CCC;
+    overflow-y: auto;
+}
+
+.search-button {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    height: 51px;
+    border: 1px solid #CCC;
+    cursor: pointer;
+    background: hsl(0, 0%, 85%);
+    width: 5%;
+    float: right;
+}
+
+#results {
+    display: block;
+    width: 94%;
+    font-size: 20px;
+    background-color: white;
+    padding: 3%;
+}
+
+div.tagsinput {
+    float: left !important;
+    width: 94% !important;
+    font-size: 15px !important;
+    color: black !important;
+    font-family: 'Oswald', sans-serif !important;
+    overflow: auto !important;
+}
+
+div.tagsinput span.tag {
+    background-color: hsl(0, 0%, 92%) !important;
+    font-size: 15px !important;
+    color: black !important;
+    border-color: hsl(0, 0%, 92%) !important;
+    font-family: 'Oswald', sans-serif !important;
+}
+
+div.tagsinput span.tag a {
+    color: black !important;
+}
+
+div.tagsinput input {
+    font-size: 15px !important;
+    font-family: 'Oswald', sans-serif !important;
+}
