@@ -1,7 +1,7 @@
 define(['jquery',
         'underscore',
         'backbone',
-        'app'
+        'js/app'
 ],function($, _, Backbone, App) {
     var Router = Backbone.Router.extend({
         initialize: function () {
