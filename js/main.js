@@ -6,7 +6,8 @@ require.config({
         'backbone': 'bower_components/backbone/backbone',
         'underscore': 'bower_components/underscore/underscore',
         'backbone.localStorage': 'bower_components/backbone.localstorage/backbone.localStorage',
-        'bootstrap' : 'bower_components/bootstrap/dist/js/bootstrap.min'
+        'bootstrap' : 'bower_components/bootstrap/dist/js/bootstrap.min',
+        'text': 'bower_components/text/text'
     },
 
     shim: {
