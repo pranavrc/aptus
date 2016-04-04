@@ -1,14 +1,7 @@
 define(['jquery',
         'underscore',
         'backbone',
-        'js/app',
-        'models/challenge',
-        'models/course',
-        'models/user',
-        'collections/challenges',
-        'collections/courses',
-        'res/content'
-],function($, _, Backbone, App, Challenge, Course, User, Challenges, Courses, Content) {
+],function($, _, Backbone) {
     var Router = Backbone.Router.extend({
         initialize: function () {
             Backbone.history.start({pushState: true});
@@ -24,7 +17,9 @@ define(['jquery',
         },
 
         home: function () {
-            var app = new App();
+            require(['js/app'], function (App) {
+                var app = new App();
+            });
         },
 
         courses: function () {
@@ -40,6 +35,33 @@ define(['jquery',
         },
 
         populate: function () {
+            require([
+                    'collections/courses',
+                    'collections/challenges',
+                    'models/course',
+                    'models/challenge',
+                    'models/user',
+                    'res/content'
+                    ], function (Courses, Challenges, Course, Challenge, User, Content) {
+                        window.localStorage.clear();
+                        var challenges = new Challenges;
+                        var courses = new Courses;
+
+                        for (var challenge in Content['challenges']) {
+                            var newChallenge = new Challenge(Content['challenges'][challenge]);
+                            challenges.add(newChallenge);
+                            newChallenge.save();
+                        }
+
+                        for (var course in Content['courses']) {
+                            var newCourse = new Course(Content['courses'][course]);
+                            courses.add(newCourse);
+                            newCourse.save();
+                        }
+
+                        var newUser = new User(Content['user']);
+                        newUser.save();
+                    });
         }
     });
 
