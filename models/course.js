@@ -11,7 +11,7 @@ define(['jquery',
             rating: null,
             reviews: []
         },
-        localStorage: new LocalStorage('aptus-courses')
+        localStorage: new LocalStorage('aptus-course')
     });
 
     return Course;

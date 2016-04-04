@@ -13,7 +13,7 @@ define(['jquery',
             credits: null,
             courseid: null
         },
-        localStorage: new LocalStorage('aptus-challenges')
+        localStorage: new LocalStorage('aptus-challenge')
     });
 
     return Challenge;

@@ -6,7 +6,7 @@ define(['jquery',
 ], function ($, _, Backbone, LocalStorage, Challenge) {
     var Challenge = Backbone.Collection.extend({
         model: Challenge,
-        localStorage: new LocalStorage('aptus-challenges')
+        localStorage: new LocalStorage('aptus-challenge')
     });
 
     return Challenge;
