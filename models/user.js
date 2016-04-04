@@ -7,6 +7,9 @@ define(['jquery',
         defaults: {
             id: null,
             name: null,
+            age: null,
+            location: null,
+            occupation: null,
             about: null,
             interests: [],
             credits: 0

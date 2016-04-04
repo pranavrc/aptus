@@ -7,7 +7,9 @@ define(['jquery',
         defaults: {
             id: null,
             name: null,
-            description: ''
+            description: null,
+            rating: null,
+            reviews: []
         },
         localStorage: new LocalStorage('aptus-courses')
     });

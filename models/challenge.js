@@ -5,9 +5,10 @@ define(['jquery',
 ], function ($, _, Backbone, LocalStorage) {
     var Challenge = Backbone.Model.extend({
         defaults: {
-            name: '',
+            id: null,
+            name: null,
             completed: false,
-            description: '',
+            description: null,
             tier: null,
             credits: null,
             courseid: null
