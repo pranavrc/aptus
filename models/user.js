@@ -5,7 +5,7 @@ define(['jquery',
 ], function ($, _, Backbone, LocalStorage) {
     var User = Backbone.Model.extend({
         defaults: {
-            id: null,
+            id: 0,
             name: null,
             age: null,
             location: null,
