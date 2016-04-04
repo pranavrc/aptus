@@ -3,14 +3,13 @@
 define(['jquery',
         'underscore',
         'backbone',
-        'jquery.tagsinput',
         'backbone.localStorage',
         'bootstrap',
         'text!templates/home.html',
         'models/course',
         'collections/courses',
         'models/user'
-], function ($, _, Backbone, TagsInput, LocalStorage, Bootstrap, Template, Course, Courses, User) {
+], function ($, _, Backbone, LocalStorage, Bootstrap, Template, Course, Courses, User) {
     var App = Backbone.View.extend({
         el: '#main-container',
         template: _.template(Template),
