@@ -10,7 +10,7 @@ define(['jquery',
         routes: {
            "": "home",
            "course/:cid": "course",
-           "course/:cid/challenge/:chid": "challenge",
+           "challenge/:chid": "challenge",
            "complete/:chid": "complete",
            "populate": "populate"
         },
@@ -27,7 +27,12 @@ define(['jquery',
             });
         },
 
-        challenge: function (cid, chid) {
+        challenge: function (chid) {
+            require(['js/challenge'], function (ChallengeView) {
+                var challengeView = new ChallengeView({
+                    chid: parseInt(chid, 10)
+                });
+            });
         },
 
         complete: function (chid) {
