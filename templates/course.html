@@ -1,36 +1,14 @@
-<div class="container">
-    <h2>Course Name</h2>
-    <p>Course description</p>
+<div class="container text-center">
+    <h2><%= course.name %></h2>
+    <p><%= course.description %></p>
 </div>
 <div class="container">
-    <div class="page-header">
-        <h3>Tier 1</h3>
-    </div>
     <ul class="list-group">
-        <a href="#" class="list-group-item list-group-item-success">Challenge 1</a>
-        <a href="#" class="list-group-item list-group-item-success">Challenge 2</a>
-        <a href="#" class="list-group-item list-group-item-success">Challenge 3</a>
-        <a href="#" class="list-group-item list-group-item-success">Challenge 4</a>
-        <a href="#" class="list-group-item list-group-item-success">Challenge 5</a>
-    </ul>
-    <div class="page-header">
-        <h3>Tier 2</h3>
-    </div>
-    <ul class="list-group">
-        <a href="#" class="list-group-item list-group-item-success">Challenge 1</a>
-        <a href="#" class="list-group-item list-group-item-success">Challenge 2</a>
-        <a href="#" class="list-group-item ">Challenge 3</a>
-        <a href="#" class="list-group-item ">Challenge 4</a>
-        <a href="#" class="list-group-item ">Challenge 5</a>
-    </ul>
-    <div class="page-header">
-        <h3>Tier 3</h3>
-    </div>
-    <ul class="list-group">
-        <a href="#" class="list-group-item ">Challenge 1</a>
-        <a href="#" class="list-group-item ">Challenge 2</a>
-        <a href="#" class="list-group-item ">Challenge 3</a>
-        <a href="#" class="list-group-item ">Challenge 4</a>
-        <a href="#" class="list-group-item ">Challenge 5</a>
+    <% _.each (challenges, function (challenge) { %>
+        <a href="#challenge/<%= challenge.id %>" class="list-group-item <% if (challenge.get('completed')) { %>list-group-item-success<% } %>">
+            <span class="label label-default label-pill pull-right"><%= challenge.get('tier') %></span>
+            <%= challenge.get('name') %>
+        </a>
+    <% }); %>
     </ul>
 </div>
