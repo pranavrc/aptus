@@ -41,6 +41,8 @@ define(['jquery',
                 courses: this.collection.toJSON(),
                 user: this.user
             }));
+            $('.navbar-tab-profile').removeClass('active');
+            $('.navbar-tab-home').addClass('active');
             return this;
         },
 

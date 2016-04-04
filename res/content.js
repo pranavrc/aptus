@@ -61,12 +61,14 @@ define([], function () {
             }
         ],
         'user': {
-            id: 0,
-            name: 'Vikram Kumar',
-            age: 22,
-            location: 'Gainesville, Florida',
-            occupation: 'Graduate Student at University of Florida',
-            interests: ['music', 'travel', 'adventure', 'programming', 'writing']
+            "id": 0,
+            "name": 'Vikram Kumar',
+            "age": 22,
+            "location": 'Gainesville, Florida',
+            "bio": "Web Designer, Music junkie.",
+            "credits": 2080,
+            "occupation": 'Graduate Student at University of Florida',
+            "interests": ['music', 'travel', 'adventure', 'programming', 'writing']
         }
     };
 
