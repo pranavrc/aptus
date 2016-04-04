@@ -4,12 +4,11 @@ define(['jquery',
 ],function($, _, Backbone) {
     var Router = Backbone.Router.extend({
         initialize: function () {
-            Backbone.history.start({pushState: true});
+            Backbone.history.start();
         },
 
         routes: {
            "": "home",
-           "courses": "courses",
            "course/:cid": "course",
            "course/:cid/challenge/:chid": "challenge",
            "complete/:chid": "complete",
@@ -22,10 +21,10 @@ define(['jquery',
             });
         },
 
-        courses: function () {
-        },
-
         course: function (cid) {
+            require(['js/course'], function (CourseView) {
+                var courseView = new CourseView({id: parseInt(cid, 10)});
+            });
         },
 
         challenge: function (cid, chid) {
