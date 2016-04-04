@@ -12,6 +12,7 @@ define(['jquery',
            "course/:cid": "course",
            "challenge/:chid": "challenge",
            "complete/:chid": "complete",
+           "profile": "profile",
            "populate": "populate"
         },
 
@@ -32,6 +33,12 @@ define(['jquery',
                 var challengeView = new ChallengeView({
                     chid: parseInt(chid, 10)
                 });
+            });
+        },
+
+        profile: function () {
+            require(['js/profile'], function (ProfileView) {
+                var profileView = new ProfileView();
             });
         },
 
