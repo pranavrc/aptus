@@ -19,11 +19,17 @@ define(['jquery',
         },
 
         initialize: function () {
-            this.render();
+            _.bindAll(this, 'render', 'search');
+
+            var self = this;
+            this.collection = new Courses;
+            this.collection.fetch({
+                success: self.render
+            });
         },
 
         render: function () {
-            this.$el.html(this.template());
+            this.$el.html(this.template({courses: this.collection.toJSON()}));
             return this;
         },
 
