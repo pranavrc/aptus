@@ -6,8 +6,10 @@ define(['jquery',
         'jquery.tagsinput',
         'backbone.localStorage',
         'bootstrap',
-        'text!templates/home.html'
-], function ($, _, Backbone, TagsInput, LocalStorage, Bootstrap, Template) {
+        'text!templates/home.html',
+        'models/course',
+        'collections/courses'
+], function ($, _, Backbone, TagsInput, LocalStorage, Bootstrap, Template, Course, Courses) {
     var App = Backbone.View.extend({
         el: '#main-container',
         template: _.template(Template),

@@ -1,11 +1,17 @@
 define(['jquery',
         'underscore',
         'backbone',
-        'js/app'
-],function($, _, Backbone, App) {
+        'js/app',
+        'models/challenge',
+        'models/course',
+        'models/user',
+        'collections/challenges',
+        'collections/courses',
+        'res/content'
+],function($, _, Backbone, App, Challenge, Course, User, Challenges, Courses, Content) {
     var Router = Backbone.Router.extend({
         initialize: function () {
-            var app = new App();
+            Backbone.history.start({pushState: true});
         },
 
         routes: {
@@ -13,10 +19,12 @@ define(['jquery',
            "courses": "courses",
            "course/:cid": "course",
            "course/:cid/challenge/:chid": "challenge",
-           "complete/:chid": "complete"
+           "complete/:chid": "complete",
+           "populate": "populate"
         },
 
         home: function () {
+            var app = new App();
         },
 
         courses: function () {
@@ -29,6 +37,9 @@ define(['jquery',
         },
 
         complete: function (chid) {
+        },
+
+        populate: function () {
         }
     });
 
