@@ -12,6 +12,8 @@
         "backbone": "latest",
         "underscore": "latest",
         "jquery": "latest",
-        "backbone.localstorage": "latest"
+        "backbone.localstorage": "latest",
+        "bootstrap": "latest",
+        "text": "latest"
     }
 }
