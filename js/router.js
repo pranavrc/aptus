@@ -51,6 +51,7 @@ define(['jquery',
                         challenge.set({completed: true});
                         challenge.save();
                         $('.completion').replaceWith($('.completion').contents());
+                        $('#myModal').modal();
                     }
                 });
             });
