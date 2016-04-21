@@ -21,13 +21,19 @@ define(['jquery',
             this.challenge = new Challenge({id: this.chid});
 
             this.challenge.fetch({
-                success: self.render
+                success: function () {
+                    self.course = new Course({id: self.challenge.get('courseid')});
+                    self.course.fetch({
+                        success: self.render
+                    });
+                }
             });
         },
 
         render: function () {
             this.$el.html(this.template({
-                challenge: this.challenge.toJSON()
+                challenge: this.challenge.toJSON(),
+                course: this.course.toJSON()
             }));
             return this;
         }

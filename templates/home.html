@@ -7,7 +7,7 @@
         <% _.each(courses, function (course) { %>
             <a href="#course/<%= course.id %>" class="list-group-item">
             <h3 class="list-group-item-heading"><%= course.name %></h3>
-            <p class="list-group-item-text small"><em><small><%= course.description %></small></em></p>
+            <p class="list-group-item-text small" style="width: 95%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><em><small><%= course.description %></small></em></p>
             <div class="progress">
                 <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= course.completion %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= course.completion %>%;">
                 <span class="sr-only">40% Complete</span>
