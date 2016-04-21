@@ -43,6 +43,17 @@ define(['jquery',
         },
 
         complete: function (chid) {
+            require(['models/challenge'], function (Challenge) {
+                var challenge = new Challenge({id: chid});
+
+                challenge.fetch({
+                    success: function (challenge) {
+                        challenge.set({completed: true});
+                        challenge.save();
+                        $('.completion').replaceWith($('.completion').contents());
+                    }
+                });
+            });
         },
 
         populate: function () {

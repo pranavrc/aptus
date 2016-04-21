@@ -4,10 +4,21 @@
 </ol>
 
 <div class="container">
-    <h2><%= challenge.name %><% if (challenge.completed) { %> <span class="glyphicon glyphicon-ok" aria-hidden="true"></span><% } %></h2>
+    <h2><%= challenge.name %></h2>
     <p><em>Tier <%= challenge.tier %></em>, <em><%= challenge.credits %> credits.</em></p>
 </div>
 <div class="help-block"></div>
 <div class="container">
     <p><%= challenge.description %></p>
+</div>
+
+
+<div class="row text-center">
+    <% if (!challenge.completed) { %>
+    <a class="completion" href="#complete/<%= challenge.id %>">
+    <% } %>
+    <i class="fa fa-check-circle fa-5x" aria-hidden="true"></i>
+    <% if (!challenge.completed) { %>
+    </a>
+    <% } %>
 </div>
