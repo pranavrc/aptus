@@ -34,9 +34,25 @@ define(['jquery',
         },
 
         render: function () {
+            var tiered = [];
+            var challenges = this.challenges.where({courseid: this.courseid});
+
+            var counter = 1;
+            while (true) {
+                var tieredChallenges = _.filter(challenges, function (challenge) {
+                    return challenge.get('tier') == counter;
+                });
+
+                if (tieredChallenges.length > 0) {
+                    tiered.push(tieredChallenges);
+                    counter++;
+                } else {
+                    break;
+                }
+            }
             this.$el.html(this.template({
                 course: this.courses.get(this.courseid).toJSON(),
-                challenges: this.challenges.where({courseid: this.courseid})
+                challenges: tiered
             }));
             return this;
         }

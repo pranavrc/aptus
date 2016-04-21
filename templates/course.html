@@ -4,11 +4,17 @@
 </div>
 <div class="container">
     <ul class="list-group">
-    <% _.each (challenges, function (challenge) { %>
+    <% _.each (challenges, function (tier, index) { %>
+    <h4>Tier <%= index + 1 %></h4>
+    <div class="container">
+    <% _.each (tier, function (challenge) { %>
         <a href="#challenge/<%= challenge.id %>" class="list-group-item <% if (challenge.get('completed')) { %>list-group-item-success<% } %>">
-            <span class="label label-default label-pill pull-right"><%= challenge.get('tier') %></span>
+            <span class="label label-default label-pill pull-right"><%= challenge.get('credits') %></span>
             <%= challenge.get('name') %>
         </a>
+    <% }); %>
+    </div>
+    <br />
     <% }); %>
     </ul>
 </div>
