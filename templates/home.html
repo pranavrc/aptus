@@ -7,13 +7,14 @@
         <% _.each(courses, function (course) { %>
             <a href="#course/<%= course.id %>" class="list-group-item">
             <h3 class="list-group-item-heading"><%= course.name %></h3>
-            <p class="list-group-item-text small"><%= course.description %></p>
+            <p class="list-group-item-text small"><em><small><%= course.description %></small></em></p>
             <div class="progress">
                 <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= course.completion %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= course.completion %>%;">
                 <span class="sr-only">40% Complete</span>
               </div>
             </div>
             </a>
+            <br />
         <% }); %>
     </div>
 </div>
