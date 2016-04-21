@@ -17,7 +17,7 @@
     <% if (!challenge.completed) { %>
     <a class="completion" href="#complete/<%= challenge.id %>">
     <% } %>
-    <i class="fa fa-check-circle fa-5x" aria-hidden="true"></i>
+    <i class="fa fa-check-circle fa-5x"<% if (challenge.completed) { %> style="color: green;"<% } else { %> style="color: red;"<% } %> aria-hidden="true"></i>
     <% if (!challenge.completed) { %>
     </a>
     <% } %>
